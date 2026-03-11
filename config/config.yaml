@@ -1,0 +1,19 @@
+samples_tsv: "metadata/samples.tsv"
+
+ref:
+  fasta: "ref/GRCh38.primary_assembly.genome.fa"
+  gtf:   "ref/gencode.v49.primary_assembly.comprehensive.annotation.gtf"
+  star_index: "ref/STAR_GRCh38"
+
+threads:
+  star: 12
+  fastqc: 4
+  featureCounts: 8
+
+trimming:
+  fastp:
+    qualified_quality_phred: 20
+    length_required: 35
+
+featurecounts:
+  extra: "-p -B -C -t exon -g gene_id"
